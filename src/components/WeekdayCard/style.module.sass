@@ -1,0 +1,30 @@
+.container
+    background-color: #cac4dc
+    border-radius: 20px
+    min-height: 70px
+    display: grid
+    grid-template-columns: 80px 1fr
+    position: relative
+
+    &:hover .close
+        display: block
+
+.label
+    width: 80px
+    background-color: #7e7083
+    display: flex
+    justify-content: center
+    align-items: center
+    color: white
+    border-radius: 20px 0 0 20px
+
+.deals
+    display: grid
+    grid-template-columns: repeat(3, 1fr)
+
+.close
+    display: none
+    position: absolute
+    top: 0
+    right: 0
+    transform: translate(50%, -50%)
