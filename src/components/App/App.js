@@ -1,6 +1,7 @@
 import AddDeal from "../AddDeal";
 import { useState } from "react";
 import CardContainer from "../CardContainer";
+import EmptyDeals from "../NoDeals";
 
 function App() {
 
@@ -9,19 +10,19 @@ function App() {
       id: 1,
       descr: 'Learn JS',
       importance: 'very important',
-      day: 'Monday'
+      day: 1
     },
     {
       id: 2,
       descr: 'Learn React',
       importance: 'very important',
-      day: 'Wednesday'
+      day: 2
     },
     {
       id: 3,
       descr: 'Layout with SASS',
       importance: 'not important',
-      day: 'Friday'
+      day: 3
     },
   ]
 
@@ -37,11 +38,12 @@ function App() {
     }]);
   };
 
-
+  const deleteDeal = id => setDeals(deals.filter(elem => elem.id !== id));
+  const deleteDay = day_num => setDeals(deals.filter(elem => elem.day !== day_num));
   return (
     <div>
       <AddDeal createDeal={createDeal} />
-      <CardContainer deals={deals} />
+      <CardContainer deals={deals} deleteDeal={deleteDeal} deleteDay={deleteDay}/>
     </div>
   );
 }

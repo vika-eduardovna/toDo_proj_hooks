@@ -4,14 +4,15 @@ import { faXmark } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
-export default function Close() {
+export default function Close(props) {
+
   return (
     <div>
-        <button className={s.close}>
-            <FontAwesomeIcon icon={faXmark} />
-        </button>
-        
+      <button {...props} className={s.close}>
+        <FontAwesomeIcon icon={faXmark} />
+      </button>
+
     </div>
-  
+
   )
 }
